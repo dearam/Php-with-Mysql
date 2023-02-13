@@ -6,7 +6,7 @@ $(document).ready(function(){
     // $("#emptyemail").hide();
     // $("#validnumber").hide();
     // $("#emptynumber").hide();
-
+    console.log("connected successfully");
     let firstname=true,dateofbirth=true,number=true,profile=true,address=true,email=true;
 
     $("#submit").on('click',function (event){

@@ -8,40 +8,38 @@
         session_start();
     ?>
     <?php
+            //SESSION DATAS GETTING FROM FORM PAGE
             $name=$_SESSION['name'];
             $location=$_SESSION['address'];
             $email=$_SESSION['email'];
             $phonenumber=$_SESSION['mobile'];
             $image=$_SESSION['image'];
+
+
+            //INTIALIZING THE DATABASE VARIABLES
+            $servername="localhost";
+            $username="root";
+            $password="dearam8114";
+            $myDB="dearam";
+
+            //DATABASE CONNECTION AND DATA ADDING
+            try{
+                $conn=new PDO("mysql:host=$servername;dbname=$myDB",$username,$password);
+                $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+
+//                $tablecreation="create table sample(id int,firstname varchar(20))";
+//                $conn->exec($tablecreation);
+
+                $elementinsertion="insert into Surveyform values('$image','$name','$location',$phonenumber,'$email')";
+                $conn->exec($elementinsertion);
+
+                echo "added";
+                header("Location:Datasview.php");
+            }catch(PDOException $e){
+                echo "connection failed".$e->getMessage();
+            }
     ?>
-    <form class="data-form">
-        <div class="data-profile">
-            <span class="data-title">Name</span>
-            <div class="datas-content">
-                <div class="data-subcontent">
-                    <img src="<?php echo $image?>"/>
-                    <?php echo htmlspecialchars($name)?>
-                </div>
-            </div>
-        </div>
-        <div class="data-location">
-            <span class="data-title">Location</span>
-            <div class="datas">
-                <?php echo htmlspecialchars($location)?>
-            </div>
-        </div>
-        <div class="data-email">
-            <span class="data-title">Email</span>
-            <div class="datas">
-                <?php echo htmlspecialchars($email)?>
-            </div>
-        </div>
-        <div class="data-phone">
-            <span class="data-title">PhoneNumber</span>
-            <div class="datas">
-                <?php echo htmlspecialchars($phonenumber)?>
-            </div>
-        </div>
-    </form>
+
 </body>
 </html>
