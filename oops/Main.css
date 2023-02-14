@@ -1,0 +1,105 @@
+body{
+    background-color: mediumpurple;
+    display: flex;
+    justify-content: center;
+}
+form{
+    position: relative;
+    margin: 20px;
+    height: auto;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+header{
+    width: 95%;
+    margin: 10px;
+    padding: 15px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: mediumpurple;
+}
+.radio-btn{
+    box-sizing: border-box;
+    appearance: none;
+    background: white;
+    outline: 0;
+    color: black;
+    border-radius: 5px;
+    border: 1.5px solid #333;
+    width: 100px;
+    height: 30px;
+}
+.radio-btn:checked {
+    background: mediumpurple;
+}
+.radio-label{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.radio-btn:hover{
+    background-color: #e5e5e5   ;
+}
+.question1{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+p{
+    position: absolute;
+}
+.range-label{
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+}
+.normradio-btns,
+.checheckbox-btns{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    gap: 5px;
+    width: 60%;
+}
+.checkbox-align{
+    width: 400px;
+    display: flex;
+    position: relative;
+}
+.range-btn{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.button{
+    width: 95%;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    padding: 20px;
+}
+button{
+    background-color: mediumpurple;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+button:hover{
+    background-color: #333333;
+    border: 2px solid mediumpurple;
+}
